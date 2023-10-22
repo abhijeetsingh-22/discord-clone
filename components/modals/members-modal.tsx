@@ -36,7 +36,7 @@ export const MembersModal = () => {
 	const [loadingId,setLoadingId]=useState("")
 
 	const isModalOpen = isOpen && type == "members"
-
+	const router=useRouter()
 	const onKick=async (memberId:string)=>{
 		try {
 			setLoadingId(memberId)
@@ -65,6 +65,7 @@ export const MembersModal = () => {
 				}
 			})
 			const response= await axios.patch(url,{role})
+			router.refresh()
 			onOpen("members",{server:response.data})
 		} catch (error) {
 			console.log(error)
