@@ -78,6 +78,7 @@ export default async function handler(
     })
 
     const channelKey= `chat:${channelId}:messages`
+    console.log(`emitting to ${channelKey} ${res?.socket?.server?.io}`)
     res?.socket?.server?.io?.emit(channelKey,message)
 
     return res.status(200).json(message)
