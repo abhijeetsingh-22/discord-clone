@@ -109,7 +109,6 @@ const ChatMessages = ({
             {data?.pages?.map((group,idx)=>(
                 <Fragment key={idx}>
                     {group.items.map((message:MessageWithMemberWithProfile)=>(
-                        <div>
                         <ChatItem
                             key={message.id}
                             id={message.id}
@@ -123,7 +122,6 @@ const ChatMessages = ({
                             socketQuery={socketQuery}
                             socketUrl={socketUrl}
                         />
-                        </div>
                     ))}
                 </Fragment>
             ))}
