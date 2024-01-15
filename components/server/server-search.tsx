@@ -38,7 +38,7 @@ const ServerSearch  = ({
   const onClick=({id,type}:{id:string,type:"member"|"channel"})=>{
     setOpen(false)
     if(type==="member"){
-      router.push(`/servers/${params.serverId}/conversations/${id}`)
+      router.push(`/servers/${params?.serverId}/conversations/${id}`)
     }
     if(type==="channel"){
       router.push(`/servers/${params?.serverId}/channels/${id}`)
